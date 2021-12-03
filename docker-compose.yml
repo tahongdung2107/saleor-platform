@@ -29,16 +29,18 @@ services:
       - STOREFRONT_URL=http://localhost:3000/
       - DASHBOARD_URL=http://localhost:9000/
 
-  storefront:
-    build:
-      context: ./saleor-storefront
-      dockerfile: ./Dockerfile.dev
-    restart: unless-stopped
-    network_mode: "host"
-    volumes:
-      - ./saleor-storefront/:/app:cached
-      - /app/node_modules/
-    command: npm start
+#  storefront:
+#    build:
+#      context: ./saleor-storefront
+#      dockerfile: ./Dockerfile.dev
+#    restart: unless-stopped
+#    network_mode: "host"
+#    volumes:
+#      - ./saleor-storefront/:/app:cached
+#      - /app/node_modules/
+#    command: npm start
+#    environment: # New line added
+#      - GTM_ID=GTM-XXXXXXX     # New line added
 
   dashboard:
     build:
